@@ -1,0 +1,25 @@
+{
+  "name": "modulo02-projeto02",
+  "version": "1.0.0",
+  "description": "Projeto02 do Modulo02 -- pokedex",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrBusino/Modulo02-Projeto02.git"
+  },
+  "author": "Pedro Casanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrBusino/Modulo02-Projeto02/issues"
+  },
+  "homepage": "https://github.com/DrBusino/Modulo02-Projeto02#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
