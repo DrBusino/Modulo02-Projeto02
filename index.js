@@ -51,13 +51,8 @@ app.post("/create", (req, res) =>{
 
 
 
-app.get("/update/:id", (req, res) =>{
-  const id = +req.params.id;
-  const jogador = cardFoot.find(jogador => jogador.id === id);
 
 
-  res.render("index" , {jogador, cardFoot});
-})
 
 
 app.listen(port, () =>

@@ -31,34 +31,13 @@
         <p class="cardPos"><%= jogador.posicao%></p>
         <p class="cardTime"><%= jogador.time%></p>
 
-        <a href="/update/<%= jogador.id%>">Editar</a>
+        
       </div>
       <%})%>
     </section>
 
     <section id="formParent">
 
-<% if (jogador != undefined){ %>
-
-      <form action="/update" id="formAdd" method="get">
-        <h2>Editar jogador</h2>
-
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"  value="<%= jogador.nome%>"/>
-
-        <label for="posicao">Posição:</label>
-        <input type="text" id="posicao" name="posicao"  value="<%= jogador.posicao%>"/>
-
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time" value="<%= jogador.time%>" />
-
-        <label for="foto">Foto:</label>
-        <input type="text" id="foto" name="foto" value="<%= jogador.foto%>"/>
-
-        <button id="btnAdd" type="submit">Salvar</button>
-      </form>
-
-      <% } else{ %>
 
   <form action="/create" id="formAdd" method="post">
         <h2>Adicionar jogador</h2>
@@ -78,7 +57,7 @@
         <button id="btnAdd" type="submit">Adicionar</button>
       </form>
 
-    <%}%>
+    
 
 
     </section>
