@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+
     <title>Document</title>
-</head>
-<body>
-    <div>ola mundo</div>
-</body>
+  </head>
+
+  <body>
+    <header>
+      <h1>FootDex</h1>
+
+      <nav>
+        <ul>
+          <li><a href="">Início</a></li>
+          <li><a href="">Pesquisar</a></li>
+          <li><a href="">Organizar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="cards">
+      <% cardFoot.forEach((jogador)=> { %>
+      <div class="card">
+        <img class="cardImg" src="<%= jogador.foto %>" alt="foto" />
+        <h2 class="cardName"><%= jogador.nome%></h2>
+        <p class="cardId"><%= jogador.id%></p>
+        <p class="cardPos"><%= jogador.posicao%></p>
+        <p class="cardTime"><%= jogador.time%></p>
+
+        <a href="/update/<%= jogador.id%>">Editar</a>
+      </div>
+      <%})%>
+    </section>
+
+    <section id="formParent">
+
+<% if (jogador != undefined){ %>
+
+      <form action="/update" id="formAdd" method="get">
+        <h2>Editar jogador</h2>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"  value="<%= jogador.nome%>"/>
+
+        <label for="posicao">Posição:</label>
+        <input type="text" id="posicao" name="posicao"  value="<%= jogador.posicao%>"/>
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="<%= jogador.time%>" />
+
+        <label for="foto">Foto:</label>
+        <input type="text" id="foto" name="foto" value="<%= jogador.foto%>"/>
+
+        <button id="btnAdd" type="submit">Salvar</button>
+      </form>
+
+      <% } else{ %>
+
+  <form action="/create" id="formAdd" method="post">
+        <h2>Adicionar jogador</h2>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" />
+
+        <label for="posicao">Posição:</label>
+        <input type="text" id="posicao" name="posicao" />
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" />
+
+        <label for="foto">Foto:</label>
+        <input type="text" id="foto" name="foto" />
+
+        <button id="btnAdd" type="submit">Adicionar</button>
+      </form>
+
+    <%}%>
+
+
+    </section>
+  </body>
+  <script href="/index.js"></script>
 </html>
